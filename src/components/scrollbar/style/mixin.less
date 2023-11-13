@@ -1,0 +1,38 @@
+.shadow(@scrollbar-shadow-size; @placement) {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    content: '';
+}
+
+.shadow(@scrollbar-shadow-size; @placement) when (@placement = 'top') {
+    top: -@scrollbar-shadow-size;
+    left: 0;
+    width: 100%;
+    height: @scrollbar-shadow-size;
+    box-shadow: 0 1px var(--f-shadow-radius-sm) var(--f-shadow-color-sm);
+}
+
+.shadow(@scrollbar-shadow-size; @placement) when (@placement = 'bottom') {
+    bottom: -@scrollbar-shadow-size;
+    left: 0;
+    width: 100%;
+    height: @scrollbar-shadow-size;
+    box-shadow: 0 -1px var(--f-shadow-radius-sm) var(--f-shadow-color-sm);
+}
+
+.shadow(@scrollbar-shadow-size; @placement) when (@placement = 'left') {
+    top: 0;
+    left: -@scrollbar-shadow-size;
+    width: @scrollbar-shadow-size;
+    height: 100%;
+    box-shadow: 1px 0 var(--f-shadow-radius-sm) var(--f-shadow-color-sm);
+}
+
+.shadow(@scrollbar-shadow-size; @placement) when (@placement = 'right') {
+    top: 0;
+    right: -@scrollbar-shadow-size;
+    width: @scrollbar-shadow-size;
+    height: 100%;
+    box-shadow: -1px 0 var(--f-shadow-radius-sm) var(--f-shadow-color-sm);
+}
